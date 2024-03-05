@@ -2,6 +2,7 @@
 install.packages("GGally")
 install.packages("dplyr")
 install.packages("stringr")
+install.packages("MASS")
 
 # Load required packages
 library(readxl)
@@ -11,7 +12,7 @@ library(dplyr)
 library(stringr)
 library(ggplot2)
 library(tidyr)
-
+library(MASS)
 
 # Assign the file path to a variable
 route <- "/Users/john/data-science/data-gathering/inyeccion.csv"
