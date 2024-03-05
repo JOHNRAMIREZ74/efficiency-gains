@@ -17,9 +17,10 @@ library(tidyr)
 route <- "/Users/john/data-science/data-gathering/inyeccion.csv"
 
 # Read the data from the CSV file
-data <- read.table(route, header = TRUE, sep = ";", dec =".")
+data <- read.table(route, header = TRUE, sep = ";", dec =".", stringsAsFactors = FALSE)
+print(data)
 
-# Display column names and data classes
+#Display column names and data classes
 str(data)
 
 # Convert Date column to appropriate data type with specified format
@@ -65,9 +66,6 @@ sum(is.na(data))
 data <- na.omit(data)
 
 # Explore Relationships:
-# ggpairs(data, mapping = NULL, columns = 1:2)
-
-ggplot(data, aes(x = Date, y = Time)) +
-  geom_line()
-
-
+columns <- c(1, 2:6)
+mapping <- aes(color = CM_FI_INY02.DACA.PV)
+ggpairs(data, mapping = TRUE, columns = columns)
